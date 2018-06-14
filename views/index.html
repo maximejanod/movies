@@ -1,0 +1,21 @@
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x small-up-1 medium-up-2">
+      {% for movie in data %}
+        <div class="cell">
+          <div class="card" style="width:350px;">
+            <div class="card-divider">
+              <h4><a href="movie/{{ movie.id }}"><strong>{{ movie.title }}</strong></a></h4>
+            </div>
+            <img src="{{ baseUrl('assets/posters/') }}{{ movie.poster }}">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
